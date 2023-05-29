@@ -1,0 +1,45 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/mobsya/thymio/protos/Thymio2.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material2 "thymio body"
+      coulombFriction [
+        0.7
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.3311981350611016 -0.33475770667482946 -0.8821819954827105 4.5979642161382905
+  position 0.19336088866220988 -2.558811864533542 1.9518539666639587
+}
+TexturedBackground {
+  luminosity 5
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.06 0 0
+  floorSize 1.5 1.5
+  floorTileSize 1.5 1.5
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "../world_texture/map2.png"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+      filtering 5
+    }
+  }
+}
+Thymio2 {
+  translation 0 -0.47 0
+  controller "Thymio_Controller"
+}
